@@ -1,0 +1,18 @@
+Fontes - valida
+
+Kadi - valida
+
+Pesquisas - valida
+
+Empresas - portal
+
+usuario_api_valida - portal
+
+portabilidade - valida
+
+----------------------------
+Classes para banco de dados 
+
+Valida
+
+Portal
