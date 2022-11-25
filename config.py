@@ -13,3 +13,7 @@ try:
 except mariadb.Error as e:
     print(f"erro ao conectar no banco {e}")
     sys.exit(1)
+
+# self = banco.cursor()
+
+# self.execute("CREATE TABLE user (nome VARCHAR(50), email VARCHAR(50), id int NOT NULL PRIMARY KEY AUTO_INCREMENT)")

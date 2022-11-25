@@ -25,11 +25,21 @@ class empresas(Resource):
         rows = cursor.fetchall()
         return jsonify(rows)
 
-    def put(self, nome):
+    def put(self, id):
         cursor = self.conn.cursor()
-        sql = """update verttice set status = 'I' where id = '1'"""
-        cursor.execute(sql, nome)
+        sql = 'update verttice set status = "'+self.verificationAction(request.json['action'])+'" where id = '+str(id)
+        cursor.execute(sql)
         self.conn.commit()
         cursor.close()
         self.conn.close()
         return {'mensage': 'dados atualizados'}
+
+    def verificationAction(self, action=0):
+        if action == 'activate':
+            return 'A'
+        elif action == 'disabled':
+            return 'I'
+        elif action == 'disabledall':
+            return 'X'
+        else:
+            return 'A'
